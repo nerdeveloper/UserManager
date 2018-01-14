@@ -5,18 +5,27 @@
 ############
 
 echo "*****Running Application Checks********"
-secs=$((5))
-while [ $secs -gt 0 ]; do
-   echo -ne "$secs\033[0K\r"
-   sleep 1
-   : $((secs--))
-done
+echo "*****Some Programs will be checked and installed********"
 
+read -p "Do you want to Continue (y/n)?" -r choice 
+case "$choice" in 
+  y|Y ) echo "YES";;
+  n|N ) echo "NO";;
+  * ) echo "INVALID";;
+esac
+
+if [[ "$choice" =~ ^[Yy]$ ]]
+ then
+ echo ''
+  else
+  	exit 0;
+
+fi
 if [ -x "$(command -v docker)" ]; then
   echo 'Waoh!! Docker is installed.' >&2
   
   else
-  	echo 'Oops! Docker is not here.' >&2
+  	echo 'Oops! Docker is not installed.' >&2
 
   	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
   	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
@@ -31,10 +40,10 @@ if [ -x "$(command -v docker-machine)" ]; then
 
 else 
 
-curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && \
+"curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && \
 chmod +x /tmp/docker-machine && \
 sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
- sudo apt-get update
+ sudo apt-get update"
 
 echo '******DOCKER-MACHINE IS NOW INSTALLED!!**********.' >&2
 

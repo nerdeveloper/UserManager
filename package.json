@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jasmine tests/"
+    "test": "jasmine tests/",
+    "start:dev": "git add . && git-cz && git push -u origin master"
   },
   "keywords": [
     "express",
@@ -24,7 +25,9 @@
   "directories": {
     "test": "tests"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "2.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andela-bolajide/UserManager.git"
@@ -32,5 +35,10 @@
   "bugs": {
     "url": "https://github.com/andela-bolajide/UserManager/issues"
   },
-  "homepage": "https://github.com/andela-bolajide/UserManager#readme"
+  "homepage": "https://github.com/andela-bolajide/UserManager#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

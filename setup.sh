@@ -7,6 +7,8 @@
 echo "*****Running Application Checks********"
 echo "*****Some Programs will be checked and installed********"
 
+
+#this will validate whether the user wants to install the programs or not
 read -p "Do you want to Continue (y/n)?" -r choice 
 case "$choice" in 
   y|Y ) echo "YES";;
@@ -21,6 +23,7 @@ if [[ "$choice" =~ ^[Yy]$ ]]
   	exit 0;
 
 fi
+#this will check if docker is installed or not
 if [ -x "$(command -v docker)" ]; then
   echo 'Waoh!! Docker is installed.' >&2
   
@@ -35,6 +38,7 @@ if [ -x "$(command -v docker)" ]; then
   	echo '******DOCKER IS NOW INSTALLED!!**********.' >&2
 fi
 
+#this will check if Docker-machine is installed or not
 if [ -x "$(command -v docker-machine)" ]; then
   echo 'Waoh!! Docker-machine is installed.' >&2
 
@@ -47,7 +51,11 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 
 echo '******DOCKER-MACHINE IS NOW INSTALLED!!**********.' >&2
 
+
 fi
+
+
+#this will check if docker-compose is installed or not
 
 if [ -x "$(command -v docker-compose)" ]; then
   echo 'Waoh!! docker-compose is installed.' >&2
@@ -61,7 +69,7 @@ sudo pip install docker-compose && \
 echo '******DOCKER-COMPOSE IS NOW INSTALLED!!**********.' >&2
 
 fi
-
+# On successful install, run the bash comands
 echo "***Shutting down any running machine...***"
 docker-machine stop default
 echo "************Fire up machine******************"

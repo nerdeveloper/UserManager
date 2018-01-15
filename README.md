@@ -21,7 +21,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 <aside class="warning">
-There is no need to Install Docker or any other Programs. This [Shell Script](setup.sh) checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.
+There is no need to Install Docker or any other Programs. This [Shell Script](https://github.com/nerdeveloper/UserManager/blob/master/setup.sh) checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.
 </aside>
 
 ### Development

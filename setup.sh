@@ -40,70 +40,17 @@ if [ -x "$(command -v docker)" ]; then
   	echo '******DOCKER IS NOW INSTALLED!!**********.' >&2
 fi
 
-#this will check if Docker-machine is installed or not
-if [ -x "$(command -v docker-machine)" ]; then
-  echo 'Waoh!! Docker-machine is installed.' >&2
-
-else 
-
-"curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && \
-chmod +x /tmp/docker-machine && \
-sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
- sudo apt-get update"
-
-echo '******DOCKER-MACHINE IS NOW INSTALLED!!**********.' >&2
-
-
-fi
-
-
-#this will check if docker-compose is installed or not
-
-if [ -x "$(command -v docker-compose)" ]; then
-  echo 'Waoh!! docker-compose is installed.' >&2
-
-else 
-
-sudo apt-get -y install python-pip && \
-sudo pip install docker-compose && \
- sudo apt-get update
-
-echo '******DOCKER-COMPOSE IS NOW INSTALLED!!**********.' >&2
-
-fi
-#Check to see if VirtualBox is installed or not
-if [ -x "$(command -v virtualbox)" ]; then
-  echo 'Waoh!! VirtualBox is installed.' >&2
-
-else 
-echo 'Oops! VirtualBox is not installed.' >&2
-sudo apt-get install virtualbox && \
- sudo apt-get update
-
-echo '******VirtualBox IS NOW INSTALLED!!**********.' >&2
-fi
 # On successful install, run the bash comands
-echo "***Shutting down any running machine...***"
-docker-machine stop default
-echo "************Creating a Docker machine******************"
-docker-machine create --driver virtualbox default
-echo "************Fire up machine******************"
-docker-machine start default
-echo "*********Running process for Node-MongoDB docker Application.******"
-docker-compose build
-docker-compose up
-sudo docker rm nerdeveloperdb
-
-
+echo "***Pulling Node and MongoDB from Docker...***"
 sudo docker pull node
-
-# Pull mongo image from Docker Hub
 sudo docker pull mongo
-# Create a container using the mongo image from step 2
-sudo docker run --name nerdeveloperdb -p 27017:27017 mongo
-
-# Build app image from the Dockerfile in the project root
+echo "************Remove Docker container name if exits******************"
+sudo docker rm nerdeveloper
+echo "************Createing a Docker container for MongoDB******************"
+sudo docker run --name nrdeveloper -p 27017:27017 mongo
+echo "*********Building the Docker Container Image******"
 sudo docker build -t nerdeveloper/usermanger .
-
-# Create a container using the docker image from step 4
+echo "*********Creating a Container for Docker-Image******"
 sudo docker run  --name nerdeveloper/usermanager -d
+
+

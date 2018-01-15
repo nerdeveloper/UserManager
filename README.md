@@ -7,7 +7,7 @@ The API is used to manage users in a MongoDB database.
 
 ## Guide to Setup Docker and Deploy
 
-### FOR LINUX USERS(NON-VIRTUALIZED PC[This computer doesn't have VT-X/AMD-v enabled])
+#### FOR LINUX USERS(NON-VIRTUALIZED PC[This computer doesn't have VT-X/AMD-v enabled])
 * Clone the repository by entering the command in the terminal.
 ```bash
 git clone https://github.com/nerdeveloper/UserManager.git
@@ -22,7 +22,7 @@ npm i && touch .env && cp -r .env-sample .env && chmod +x setup.sh && ./setup.sh
 #### Warning
 There is no need to Install Docker or any other Program(manually). This [Shell Script](setup.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.
 
-### FOR MAC OS/LINUX USERS(VIRTUALIZED PC[This computer has VT-X/AMD-v enabled])
+#### FOR MAC OS/LINUX USERS(VIRTUALIZED PC[This computer has VT-X/AMD-v enabled])
 * Clone the repository by entering the command in the terminal.
 ```bash
 git clone https://github.com/nerdeveloper/UserManager.git

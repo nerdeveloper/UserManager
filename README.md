@@ -17,10 +17,7 @@ git clone https://github.com/nerdeveloper/UserManager
 
 * Run the deployment script to set up 
 ```bash
-touch .env
-cp -r .env-sample .env
-chmod +x setup.sh
-./setup.sh
+touch .env && cp -r .env-sample .env && chmod +x setup.sh && ./setup.sh
 ```
 #### Warning
 There is no need to Install Docker or any other Program(manually). This [Shell Script](setup.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.

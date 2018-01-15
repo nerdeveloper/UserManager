@@ -10,7 +10,7 @@ The API is used to manage users in a MongoDB database.
 ## FOR MAC OS/LINUX USERS
 * Clone the repository by entering the command in the terminal.
 ```bash
-git clone https://github.com/nerdeveloper/UserManager
+git clone https://github.com/nerdeveloper/UserManager.git
 
 ```
 * Navigate to the project folder using `cd UserManager` on your terminal 

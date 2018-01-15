@@ -21,7 +21,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 #### Warning
-There is no need to Install Docker or any other Program. This [Shell Script(bash)](setup.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.
+There is no need to Install Docker or any other Program(manually). This [Shell Script](setup.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.
 
 ### Development
 This application was developed using [ExpressJS](http://expressjs.com/). MongoDB was used for persisting data with [Mongoose](https://mongoosejs.com/) as [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).

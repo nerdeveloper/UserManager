@@ -4,10 +4,8 @@
 # This might take sometime
 ############
 
-echo "*****Running Application Checks********"
+
 echo "*****Some Programs will be checked and installed********"
-
-
 #this will validate whether the user wants to install the programs or not
 read -p "Do you want to Continue (y/n)?" -r choice 
 case "$choice" in 

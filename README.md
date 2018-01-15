@@ -5,6 +5,23 @@
 This repository contains a simple demo API built with NodeJS.
 The API is used to manage users in a MongoDB database.
 
+### Guide to Setup Docker and Deploy
+
+## FOR MAC OS/ LINUX USERS
+* Clone the repository by entering the command  in the terminal.
+```bash
+git clone https://github.com/nerdeveloper/UserManager
+
+```
+* Navigate to the project folder using `cd UserManager` on your terminal 
+*Run the deployment script to set up 
+```bash
+./setup.sh```
+
+<aside class="notice">
+There is no need to Install Docker or any other Programs. The `./setup.sh` checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.
+</aside>
+
 ### Development
 This application was developed using [ExpressJS](http://expressjs.com/). MongoDB was used for persisting data with [Mongoose](https://mongoosejs.com/) as [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).
 

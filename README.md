@@ -8,7 +8,7 @@ The API is used to manage users in a MongoDB database.
 ### Guide to Setup Docker and Deploy
 
 ## FOR MAC OS/LINUX USERS
-* Clone the repository by entering the command  in the terminal.
+* Clone the repository by entering the command in the terminal.
 ```bash
 git clone https://github.com/nerdeveloper/UserManager
 
@@ -20,9 +20,8 @@ git clone https://github.com/nerdeveloper/UserManager
 chmod +x setup.sh
 ./setup.sh
 ```
-<aside class="warning">
-There is no need to Install Docker or any other Programs. This [Shell Script](https://github.com/nerdeveloper/UserManager/blob/master/setup.sh) checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.
-</aside>
+#### Warning
+There is no need to Install Docker or any other Program. This [Shell Script(bash)](setup.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.
 
 ### Development
 This application was developed using [ExpressJS](http://expressjs.com/). MongoDB was used for persisting data with [Mongoose](https://mongoosejs.com/) as [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).

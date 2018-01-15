@@ -18,12 +18,10 @@ git clone https://github.com/nerdeveloper/UserManager
 * Run the deployment script to set up 
 ```bash
 chmod +x setup.sh
-
 ./setup.sh
-
 ```
 <aside class="warning">
-There is no need to Install Docker or any other Programs. The ```bash ./setup.sh``` checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.
+There is no need to Install Docker or any other Programs. This [Shell Script(Bash)](setup.sh) checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.
 </aside>
 
 ### Development

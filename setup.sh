@@ -69,9 +69,23 @@ sudo pip install docker-compose && \
 echo '******DOCKER-COMPOSE IS NOW INSTALLED!!**********.' >&2
 
 fi
+#Check to see if VirtualBox is installed or not
+if [ -x "$(command -v virtualbox)" ]; then
+  echo 'Waoh!! VirtualBox is installed.' >&2
+
+else 
+echo 'Oops! VirtualBox is not installed.' >&2
+sudo apt-get install virtualbox && \
+ sudo apt-get update
+
+echo '******VirtualBox IS NOW INSTALLED!!**********.' >&2
+
+fi
 # On successful install, run the bash comands
 echo "***Shutting down any running machine...***"
 docker-machine stop default
+echo "************Creating a Docker machine******************"
+docker-machine create --driver virtualbox default
 echo "************Fire up machine******************"
 docker-machine start default
 echo "*********Running process for Node-MongoDB docker Application.******"

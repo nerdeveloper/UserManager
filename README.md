@@ -17,6 +17,8 @@ git clone https://github.com/nerdeveloper/UserManager
 
 * Run the deployment script to set up 
 ```bash
+touch .env
+cp -r .env-sample .env
 chmod +x setup.sh
 ./setup.sh
 ```

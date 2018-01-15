@@ -14,9 +14,12 @@ git clone https://github.com/nerdeveloper/UserManager
 
 ```
 * Navigate to the project folder using `cd UserManager` on your terminal 
+
 *Run the deployment script to set up 
 ```bash
-./setup.sh```
+./setup.sh
+
+```
 
 <aside class="notice">
 There is no need to Install Docker or any other Programs. The `./setup.sh` checks for all the Programs(Installed or not) and make neccessary changes for a successful Build.

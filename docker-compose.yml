@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  
+  webapp:
+    image: UserManager
+
+  node:
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - "3000:3000"
+    networks:
+      - nodeapp-network
+    depends_on: 
+      - mongodb
+      
+  mongodb:
+    build:
+      context: ./database/
+      dockerfile: DockerFile
+    ports:
+      - "27017:27017"
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge

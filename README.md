@@ -7,7 +7,7 @@ The API is used to manage users in a MongoDB database.
 
 ### Guide to Setup Docker and Deploy
 
-## FOR MAC OS/LINUX USERS
+## FOR LINUX USERS(NON-VIRTUALIZED PC[This computer doesn't have VT-X/AMD-v enabled])
 * Clone the repository by entering the command in the terminal.
 ```bash
 git clone https://github.com/nerdeveloper/UserManager.git
@@ -21,6 +21,21 @@ npm i && touch .env && cp -r .env-sample .env && chmod +x setup.sh && ./setup.sh
 ```
 #### Warning
 There is no need to Install Docker or any other Program(manually). This [Shell Script](setup.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.
+
+## FOR MAC OS/LINUX USERS(VIRTUALIZED PC[This computer has VT-X/AMD-v enabled])
+* Clone the repository by entering the command in the terminal.
+```bash
+git clone https://github.com/nerdeveloper/UserManager.git
+
+```
+* Navigate to the project folder using `cd UserManager` on your terminal 
+
+* Run the deployment script to set up 
+```bash
+npm i && touch .env && cp -r .env-sample .env && chmod +x install.sh && ./install.sh
+```
+#### Warning
+There is no need to Install Docker or any other Program(manually). This [Shell Script](install.sh) I have developed checks for all the Programs required(Installed or not) for a successful Deployment.
 
 ### Development
 This application was developed using [ExpressJS](http://expressjs.com/). MongoDB was used for persisting data with [Mongoose](https://mongoosejs.com/) as [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).

@@ -1,6 +1,6 @@
 #!/bin/bash
 ####################
-# This simple docker bash script will set up mongoDB
+# This bash script was developed Obinna Odirionye
 # This might take sometime
 ############
 

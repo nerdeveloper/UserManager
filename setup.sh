@@ -1,3 +1,7 @@
+
+
+
+
 #!/bin/bash
 ####################
 # This bash script was developed Obinna Odirionye
@@ -77,7 +81,6 @@ sudo apt-get install virtualbox && \
  sudo apt-get update
 
 echo '******VirtualBox IS NOW INSTALLED!!**********.' >&2
-
 fi
 # On successful install, run the bash comands
 echo "***Shutting down any running machine...***"
@@ -89,18 +92,18 @@ docker-machine start default
 echo "*********Running process for Node-MongoDB docker Application.******"
 docker-compose build
 docker-compose up
+sudo docker rm nerdeveloperdb
 
 
-docker pull node
+sudo docker pull node
 
 # Pull mongo image from Docker Hub
-docker pull mongo
-
+sudo docker pull mongo
 # Create a container using the mongo image from step 2
-docker run --name usermanager  mongo
+sudo docker run --name nerdeveloperdb -p 27017:27017 mongo
 
 # Build app image from the Dockerfile in the project root
-docker build -t nerdeveloper/usermanager .
+sudo docker build -t nerdeveloper/usermanger .
 
 # Create a container using the docker image from step 4
-docker run --name usermanager  nerdeveloper/usermanager
+sudo docker run  --name nerdeveloper/usermanager -d

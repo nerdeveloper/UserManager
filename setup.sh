@@ -89,3 +89,18 @@ docker-machine start default
 echo "*********Running process for Node-MongoDB docker Application.******"
 docker-compose build
 docker-compose up
+
+
+docker pull node
+
+# Pull mongo image from Docker Hub
+docker pull mongo
+
+# Create a container using the mongo image from step 2
+docker run --name usermanager  mongo
+
+# Build app image from the Dockerfile in the project root
+docker build -t nerdeveloper/usermanager .
+
+# Create a container using the docker image from step 4
+docker run --name usermanager  nerdeveloper/usermanager
